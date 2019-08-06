@@ -50,6 +50,12 @@ variable "create_alb" {
   default     = true
 }
 
+variable "master_create_eip" {
+  description = "True if eip has to created for jenkins master"
+  type = bool
+  default = false
+}
+
 variable "cert_arn" {
   description = "aws acm arn of the domain"
 }

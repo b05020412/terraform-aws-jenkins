@@ -5,8 +5,17 @@ data "template_file" "setup-master" {
   vars = {
     hostname = format("jenkins-master-%d", count.index + 1)
   }
-
 }
+
+resource "aws_eip" "master" {
+  count = var.master_create_eip ? length(local.master_config) : 0
+  instance = aws_instance.master[count.index].id
+  vpc = true
+  tags = merge(var.common_tags, {
+    Name= format("%s-jenkins-master-%d-eip", var.name_prefix, count.index+1)
+  })
+}
+
 resource "aws_instance" "master" {
   count = length(local.master_config)
 
