@@ -1,4 +1,4 @@
-!/usr/bin/env bash
+#!/usr/bin/env bash
 
 # This script template is expected to be populated during the setup of a
 # jenkins slave node. It runs on host startup.
