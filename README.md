@@ -6,5 +6,4 @@
 
 ## TODO
 1. Add documentation
-2. Add outputs
-3. Use variables for the target groups and port configuration
+2. Use variables for the target groups and port configuration
