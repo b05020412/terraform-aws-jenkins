@@ -3,7 +3,7 @@ data "template_file" "setup-slave" {
   template = file(format("%s/files/setup-slave.sh", path.module))
 
   vars = {
-    hostname = format("jenkins-slave-%d", count.index + 1)
+    hostname               = format("jenkins-slave-%d", count.index + 1)
     devops_user_public_key = var.devops_user_public_key
   }
 
@@ -15,7 +15,7 @@ resource "aws_instance" "slave" {
   instance_type = local.slave_config[count.index].instance_family
 
   user_data = data.template_file.setup-slave[count.index].rendered
-  key_name = local.slave_config[count.index].keypair_name
+  key_name  = local.slave_config[count.index].keypair_name
 
   subnet_id              = local.slave_config[count.index].subnet_id
   vpc_security_group_ids = concat(var.jenkins_farm_sg_list, var.slave_sg_list, local.slave_config[count.index].additional_sg_list)
