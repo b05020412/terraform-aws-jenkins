@@ -1,3 +1,4 @@
+/*
 module "internal_alb" {
   source                    = "github.com/bsandeep23/terraform-aws-alb"
   load_balancer_is_internal = true
@@ -22,3 +23,4 @@ resource "aws_lb_target_group_attachment" "internal_jenkins" {
   target_id        = aws_instance.master[count.index].id
   port             = 8080
 }
+*/
