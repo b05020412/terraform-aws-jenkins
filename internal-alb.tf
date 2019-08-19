@@ -1,6 +1,5 @@
 module "internal_alb" {
   source                    = "github.com/bsandeep23/terraform-aws-alb"
-  create_alb                = var.create_internal_alb
   load_balancer_is_internal = true
   load_balancer_name        = format("jenkins-internal-alb")
   security_groups           = concat(var.internal_alb_sg_list, var.jenkins_farm_sg_list)

@@ -157,12 +157,6 @@ variable "devops_user_public_key" {
   type        = string
 }
 
-variable "create_internal_alb" {
-  description = "Whether to create internal alb or not"
-  type        = bool
-  default     = false
-}
-
 variable "internal_alb_sg_list" {
   description = "list of security groups to be attached to the internal alb"
   type        = list(string)
