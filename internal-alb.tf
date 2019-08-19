@@ -17,6 +17,7 @@ module "internal_alb" {
 
 
 resource "aws_lb_target_group_attachment" "internal_jenkins" {
+  count            = length(local.master_config)
   target_group_arn = module.internal_alb.target_group_arns[0]
   target_id        = aws_instance.master[count.index].id
   port             = 8080
