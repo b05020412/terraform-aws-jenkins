@@ -3,18 +3,9 @@ data "template_file" "setup-master" {
   template = file(format("%s/files/setup-master.sh", path.module))
 
   vars = {
-    hostname = format("jenkins-master-%d", count.index + 1)
+    hostname               = format("jenkins-master-%d", count.index + 1)
     devops_user_public_key = var.devops_user_public_key
   }
-}
-
-resource "aws_eip" "master" {
-  count = var.master_create_eip ? length(local.master_config) : 0
-  instance = aws_instance.master[count.index].id
-  vpc = true
-  tags = merge(var.common_tags, {
-    Name= format("%s-jenkins-master-%d-eip", var.name_prefix, count.index+1)
-  })
 }
 
 resource "aws_instance" "master" {
@@ -24,7 +15,7 @@ resource "aws_instance" "master" {
   instance_type = local.master_config[count.index].instance_family
 
   user_data = data.template_file.setup-master[count.index].rendered
-  key_name = local.master_config[count.index].keypair_name
+  key_name  = local.master_config[count.index].keypair_name
 
   subnet_id              = local.master_config[count.index].subnet_id
   vpc_security_group_ids = concat(var.jenkins_farm_sg_list, var.master_sg_list, local.master_config[count.index].additional_sg_list)
