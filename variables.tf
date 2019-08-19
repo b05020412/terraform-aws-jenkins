@@ -52,8 +52,8 @@ variable "create_alb" {
 
 variable "master_create_eip" {
   description = "True if eip has to created for jenkins master"
-  type = bool
-  default = false
+  type        = bool
+  default     = false
 }
 
 variable "cert_arn" {
@@ -86,14 +86,14 @@ variable "alb_sg_list" {
 
 variable "master_config" {
   description = "List of Maps containing the configuration of master instance"
-//  type        = list(map(any))
-//  default     = []
+  //  type        = list(map(any))
+  //  default     = []
 }
 
 variable "slave_config" {
   description = "List of map containg the configuration of slave instances"
-//  type        = list(map(any))
-//  default     = []
+  //  type        = list(map(any))
+  //  default     = []
 }
 
 variable "default_master_instance_family" {
@@ -154,5 +154,17 @@ variable "default_slave_subnet_id" {
 
 variable "devops_user_public_key" {
   description = "Devops user public key"
-  type = string  
+  type        = string
+}
+
+variable "create_internal_alb" {
+  description = "Whether to create internal alb or not"
+  type        = bool
+  default     = false
+}
+
+variable "internal_alb_sg_list" {
+  description = "list of security groups to be attached to the internal alb"
+  type        = list(string)
+  default     = []
 }
