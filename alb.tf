@@ -1,4 +1,4 @@
-/*
+
 module "alb" {
   source = "github.com/bsandeep23/terraform-aws-alb"
 
@@ -23,4 +23,3 @@ resource "aws_lb_target_group_attachment" "jenkins" {
   target_id        = aws_instance.master[count.index].id
   port             = 8080
 }
-*/

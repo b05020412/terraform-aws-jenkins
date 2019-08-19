@@ -39,7 +39,7 @@ output "slave_private_dns" {
   value       = aws_instance.slave.*.private_dns
 }
 
-/*
+
 output "alb_id" {
   value = module.alb.load_balancer_id
 }
@@ -83,5 +83,3 @@ output "internal_target_group_arns" {
 output "internal_alb_dns_name" {
   value = module.internal_alb.dns_name
 }
-
-*/
