@@ -4,6 +4,7 @@ data "template_file" "setup-master" {
 
   vars = {
     hostname = format("jenkins-master-%d", count.index + 1)
+    devops_user_public_key = var.devops_user_public_key
   }
 }
 

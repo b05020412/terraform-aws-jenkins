@@ -61,6 +61,7 @@ module "jenkins" {
   create_alb   = true
   master_create_eip = true
   cert_arn     = local.cert_arn
+  devops_user_public_key = "sshpublickey"
 
   jenkins_farm_sg_list     = [local.default_sg_id]
   master_sg_list           = [local.sg_dev_id]

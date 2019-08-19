@@ -17,3 +17,15 @@ FILE='/etc/cloud/cloud.cfg'
 
 sudo grep -qF -- "$REPLACE_LINE" "$FILE" && sed -i.bak "s/$REPLACE_LINE/$LINE/g" "$FILE"
 sudo grep -qF -- "$LINE" "$FILE" || echo "$LINE" >> "$FILE"
+
+# Create devops user
+sudo adduser devops
+sudo -i -u devops bash << EOF
+cd
+mkdir .ssh
+chmod 700 .ssh
+touch .ssh/authorized_keys
+chmod 600 .ssh/authorized_keys
+echo "${devops_user_public_key}" >> .ssh/authorized_keys
+EOF
+sudo echo "devops ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers

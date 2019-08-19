@@ -4,6 +4,7 @@ data "template_file" "setup-slave" {
 
   vars = {
     hostname = format("jenkins-slave-%d", count.index + 1)
+    devops_user_public_key = var.devops_user_public_key
   }
 
 }

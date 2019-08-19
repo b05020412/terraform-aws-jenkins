@@ -151,3 +151,8 @@ variable "default_slave_subnet_id" {
   description = "Default slave subnet id"
   type        = string
 }
+
+variable "devops_user_public_key" {
+  description = "Devops user public key"
+  type = string  
+}
