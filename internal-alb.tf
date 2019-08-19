@@ -9,7 +9,7 @@ module "internal_alb" {
   vpc_id                    = var.vpc_id
   https_listeners           = local.https_listeners
   https_listeners_count     = local.https_listeners_count
-  target_groups             = local.target_groups
+  target_groups             = local.internal_target_groups
   target_groups_count       = local.target_groups_count
   //    extra_ssl_certs          = local.extra_ssl_certs
   //    extra_ssl_certs_count    = local.extra_ssl_certs_count

@@ -43,4 +43,13 @@ locals {
     },
   ]
 
+  internal_target_groups = [
+    {
+      "name"             = "jenkins"
+      "backend_protocol" = "HTTP"
+      "backend_port"     = 8080
+      "slow_start"       = 100
+    },
+  ]
+
 }
