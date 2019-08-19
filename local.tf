@@ -45,7 +45,7 @@ locals {
 
   internal_target_groups = [
     {
-      "name"             = "internal_jenkins"
+      "name"             = "internal-jenkins"
       "backend_protocol" = "HTTP"
       "backend_port"     = 8080
       "slow_start"       = 100
