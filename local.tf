@@ -30,6 +30,10 @@ locals {
       "certificate_arn" = var.cert_arn
       "port"            = 443
     },
+    {
+      "certificate_arn" = var.cert_arn
+      "port"            = var.jenkins_jnlp_port
+    },
   ]
 
   target_groups_count = 2
