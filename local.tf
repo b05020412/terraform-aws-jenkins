@@ -23,7 +23,7 @@ locals {
   master_config = [for item in var.master_config : merge(local.default_master_config, item)]
   slave_config  = [for item in var.slave_config : merge(local.default_slave_config, item)]
 
-  https_listeners_count = 1
+  https_listeners_count = 2
 
   https_listeners = [
     {
