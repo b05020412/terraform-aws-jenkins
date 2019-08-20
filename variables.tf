@@ -162,3 +162,9 @@ variable "internal_alb_sg_list" {
   type        = list(string)
   default     = []
 }
+
+variable "jenkins_jnlp_port" {
+  description = "Jenkins jnlp port"
+  type        = string
+  default     = 50000
+}

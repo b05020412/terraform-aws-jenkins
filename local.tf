@@ -32,13 +32,19 @@ locals {
     },
   ]
 
-  target_groups_count = 1
+  target_groups_count = 2
 
   target_groups = [
     {
       "name"             = "jenkins"
       "backend_protocol" = "HTTP"
       "backend_port"     = 8080
+      "slow_start"       = 100
+    },
+    {
+      "name"             = "jenkins-jnlp"
+      "backend_protocol" = "HTTP"
+      "backend_port"     = var.jenkins_jnlp_port
       "slow_start"       = 100
     },
   ]
@@ -48,6 +54,12 @@ locals {
       "name"             = "internal-jenkins"
       "backend_protocol" = "HTTP"
       "backend_port"     = 8080
+      "slow_start"       = 100
+    },
+    {
+      "name"             = "internal-jenkins-jnlp"
+      "backend_protocol" = "HTTP"
+      "backend_port"     = var.jenkins_jnlp_port
       "slow_start"       = 100
     },
   ]
