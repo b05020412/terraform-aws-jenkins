@@ -168,3 +168,8 @@ variable "jenkins_jnlp_port" {
   type        = string
   default     = 50000
 }
+
+variable "private_subnets" {
+  description = "list of private subnets in which the instances can be launched"
+  type        = list(string)
+}

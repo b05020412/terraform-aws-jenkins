@@ -5,7 +5,7 @@ module "internal_alb" {
   load_balancer_name        = format("jenkins-internal-alb")
   security_groups           = concat(var.internal_alb_sg_list, var.jenkins_farm_sg_list)
   logging_enabled           = false
-  subnets                   = var.subnets
+  subnets                   = var.private_subnets
   tags                      = var.common_tags
   vpc_id                    = var.vpc_id
   https_listeners           = local.https_listeners
