@@ -58,8 +58,6 @@ module "jenkins" {
 
   subnets      = local.public_subnets
   keypair_name = local.keypair_name
-  create_alb   = true
-  master_create_eip = true
   cert_arn     = local.cert_arn
   devops_user_public_key = "sshpublickey"
 
