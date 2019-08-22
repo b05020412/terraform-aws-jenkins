@@ -120,7 +120,6 @@ module "jenkins" {
 | devops\_user\_public\_key | Devops user public key | string | n/a | yes |
 | internal\_alb\_sg\_list | list of security groups to be attached to the internal alb | list | `<list>` | no |
 | jenkins\_farm\_sg\_list | list of default security groups to be attached to all the resources in jenkins farm | list | `<list>` | no |
-| jenkins\_jnlp\_port | Jenkins jnlp port | string | `"50000"` | no |
 | keypair\_name | Key pair to be used for launching the instances | string | n/a | yes |
 | master\_config | List of Maps containing the configuration of master instance | string | n/a | yes |
 | master\_sg\_list | list of default security groups to be attached to the master instance | list | `<list>` | no |
