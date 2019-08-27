@@ -56,9 +56,9 @@ variable "master_create_eip" {
   default     = false
 }
 
-variable "cert_arn" {
-  description = "aws acm arn of the domain"
-}
+# variable "cert_arn" {
+#   description = "aws acm arn of the domain"
+# }
 
 variable "jenkins_farm_sg_list" {
   description = "list of default security groups to be attached to all the resources in jenkins farm"
