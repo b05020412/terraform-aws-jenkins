@@ -25,12 +25,12 @@ locals {
 
   https_listeners_count = 1
 
-  https_listeners = [
-    {
-      "certificate_arn" = var.cert_arn
-      "port"            = 443
-    },
-  ]
+#   https_listeners = [
+#     {
+#       "certificate_arn" = var.cert_arn
+#       "port"            = 443
+#     },
+#   ]
 
   target_groups_count = 1
 
