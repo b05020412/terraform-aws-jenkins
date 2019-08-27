@@ -8,8 +8,8 @@ module "alb" {
   subnets               = var.subnets
   tags                  = var.common_tags
   vpc_id                = var.vpc_id
-#   https_listeners       = local.https_listeners
-#   https_listeners_count = local.https_listeners_count
+  https_listeners       = local.https_listeners
+  https_listeners_count = local.https_listeners_count
   target_groups         = local.target_groups
   target_groups_count   = local.target_groups_count
   //    extra_ssl_certs          = local.extra_ssl_certs
