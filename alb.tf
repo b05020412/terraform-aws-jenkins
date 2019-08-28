@@ -1,6 +1,6 @@
 
 module "alb" {
-  source = "github.com/bsandeep23/terraform-aws-alb"
+  source = "github.com/b05020412/terraform-aws-alb"
 
   load_balancer_name    = format("jenkins-alb")
   security_groups       = concat(var.alb_sg_list, var.jenkins_farm_sg_list)
