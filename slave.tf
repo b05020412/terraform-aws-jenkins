@@ -34,3 +34,12 @@ resource "aws_instance" "slave" {
   })
 
 }
+
+resource "aws_eip" "slave" {
+  count = var.slave_create_eip ? length(local.slave_config) : 0
+  instance = aws_instance.slave[count.index].id
+  vpc = true
+  tags = merge(var.common_tags, {
+    Name= format("%s-jenkins-slave-%d-eip", var.name_prefix, count.index+1)
+  })
+}
